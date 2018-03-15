@@ -20,6 +20,7 @@ OBJS:=$(SRCS:.cpp=.o)
 
 default: $(OBJS)
 		$(CC) $(CC_FLAFS) $^ -L $(LIB_PATH) $(LIBS) -o $(TGT)
+		chmod 777 run.sh
 		
 clean:
 	rm -f $(TGT)
