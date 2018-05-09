@@ -28,7 +28,7 @@ examples:
 	
 .PHONY: deps
 deps:
-	./bsys/utils/createIncludeDir.sh
+	./bsys/utils/createIncludeDir.sh 
 	
 
 .PHONY: clean
@@ -56,6 +56,11 @@ include $(patsubst %,src/%/Module.mk,$(MODULES))
 #TESTS:=$(patsubst %,%Test,$(TOTESTS))
 .PHONY: unit_tests
 unit_tests: $(TESTS)
+	@echo $(TESTS)
+	
+#hopar:
+#	a:=1
+		
 
 
 	
