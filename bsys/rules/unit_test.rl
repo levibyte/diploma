@@ -23,17 +23,16 @@ $(shell mkdir -p $(UNITTEST_BIN_DIR))
 $(TEST_NAME):  $(TEST_TARGET) 
 	
 $(TEST_TARGET): $(TEST_OBJS) 
-	$(eval a:=$(subst Test,,$(subst test/unit/tests/,,$@ )))
-	@echo $(LOCAL_LIBS_$($(subst Test,,$(subst test/unit/tests/,,$@ ))))	
-	
+	#$(eval a:=$(subst Test,,$(subst test/unit/tests/,,$@ )))
+	#@echo $(LOCAL_LIBS_$($(subst Test,,$(subst test/unit/tests/,,$@ ))))	
 	$(CC) $^ $(LOCAL_LIBS_$(subst Test,,$(subst test/unit/tests/,,$@ ))) $(LD_FLAFS) -o $@ 
 
 -include $(TEST_DEPS)
 
 $(TEST_OBJ_ROOT)/%.o: $(TEST_CODE_DIR)/%.cpp
-	$(info $$MODULE is [${MODULE}])
-	$(info $$LOCAL_LIBS_$(MODULE) is [${LOCAL_LIBS_$(MODULE)}])
-	@echo aaaa $(LOCAL_LIBS_$(MODULE))
+	#$(info $$MODULE is [${MODULE}])
+	#$(info $$LOCAL_LIBS_$(MODULE) is [${LOCAL_LIBS_$(MODULE)}])
+	#@echo aaaa $(LOCAL_LIBS_$(MODULE))
 	$(CC) -c $< $(TEST_LOCAL_CC_FLAG) $(TEST_LOCAL_INCS) -o $@ 
 		
 $(TEST_OBJ_ROOT)/%.d: $(TEST_CODE_DIR)/%.cpp 
