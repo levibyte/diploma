@@ -33,7 +33,7 @@ $(TEST_OBJ_ROOT)/%.o: $(TEST_CODE_DIR)/%.cpp
 	#$(info $$MODULE is [${MODULE}])
 	#$(info $$LOCAL_LIBS_$(MODULE) is [${LOCAL_LIBS_$(MODULE)}])
 	#@echo aaaa $(LOCAL_LIBS_$(MODULE))
-	$(CC) -c $< $(TEST_LOCAL_CC_FLAG) $(TEST_LOCAL_INCS) -o $@ 
+	$(CC) -c  -I ./ext/catch-2.1.2  -I ./include $< $(TEST_LOCAL_CC_FLAG) $(TEST_LOCAL_INCS) -o $@ 
 		
 $(TEST_OBJ_ROOT)/%.d: $(TEST_CODE_DIR)/%.cpp 
 	#$(CC) $<  $(TEST_LOCAL_CC_FLAG) $(TEST_LOCAL_INCS)  -MM -MT $(@:.d=.o) > $@
