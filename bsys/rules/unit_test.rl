@@ -25,7 +25,7 @@ $(TEST_NAME):  $(TEST_TARGET)
 $(TEST_TARGET): $(TEST_OBJS) 
 	#$(eval a:=$(subst Test,,$(subst test/unit/tests/,,$@ )))
 	#@echo $(LOCAL_LIBS_$($(subst Test,,$(subst test/unit/tests/,,$@ ))))	
-	$(CC) $^ $(LOCAL_LIBS_$(subst Test,,$(subst test/unit/tests/,,$@ ))) $(LD_FLAFS) -o $@ 
+	$(CC) $^ $(LOCAL_LIBS_$(subst Test,,$(subst test/unit/tests/,,$@ ))) $(LD_FLAFS_TEST) -o $@ 
 
 -include $(TEST_DEPS)
 
