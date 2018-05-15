@@ -18,7 +18,9 @@ $(shell mkdir -p $(UNITTEST_BIN_DIR))
 #$(info $$MODULE is [${MODULE}])
 #$(info $$LOCAL_LIBS_$(MODULE) is [${LOCAL_LIBS_$(MODULE)}])
 #$(info $$TEST_LOCAL_LIB is [${TEST_LOCAL_LIB}])
-	
+
+CFLAGS:=-I ./ext/catch-2.1.2  -I ./include
+CXXFLAGS:=-I ./ext/catch-2.1.2  -I ./include
 
 $(TEST_NAME):  $(TEST_TARGET) 
 	
